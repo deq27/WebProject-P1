@@ -1,15 +1,38 @@
 *{padding: 0; margin: 0;}
-ul{
-    list-style: none;
+ul{ list-style: none; }
+a{ text-decoration: none;}
+
+/* 메뉴에 마우스를 올렸을때 서브메뉴 나오기 */
+.submenu>li{
+    line-height: 50px;  
+    background-color: rgba(252, 252, 252, 0.409);
 }
-a{
-    text-decoration: none;
+
+.submenu{   
+    height: 0;  /*ul의 높이를 안보이게 처리*/
+    overflow: hidden;  
 }
+
+.menu>li:hover{
+    background-color: rgba(231, 118, 231, 0.2);  
+    transition-duration: 0.5s;   
+}
+
+.menu>li:hover .submenu{
+    height: 250px;   /*서브메뉴 li한개의 높이 50*5*/
+    transition-duration: 1s;
+}
+
+.menu>li:hover .submenu:hover{
+    background-color: rgba(193, 240, 160, 0.59);
+}
+/* 메뉴 수정단 */
+
 nav{
     width: 100%;
     overflow: hidden;
     position: fixed; /*메뉴바 상단고정*/
-    background-color: rgb(121, 199, 211);
+    background-color: rgba(160, 229, 240, 0.5);
 }
 nav>h1{
     float: left;
@@ -19,12 +42,14 @@ nav>h1{
     text-align: center;
 }
 nav>ul{
+    overflow: hidden;
     float: right;
     width: 40%;
     line-height: 100px;
     margin-right: 2%;
 }
-nav li{
+.menu>li{
+    overflow: hidden;
     float: left;
     width: 20%;
     text-align: center;
@@ -48,13 +73,24 @@ section{
 }
 article{
     width: 33.3%;
+    height: 300px;
     float: left;
     line-height: 300px;
-    background-color: coral;
     text-align: center;
+    
 }
+article:hover {
+    opacity: 0.5;
+}
+
+article img {
+    width: 100%; /* 이미지를 article의 너비에 맞게 설정 */
+    height: 100%; /* 이미지를 article의 높이에 맞게 설정 */
+    object-fit: cover;
+}
+
 article:nth-child(2n){
-    background-color: darksalmon;
+    /*background-color: darksalmon;*/
 }
 @media screen and (max-width:1023px) {
     nav>h1{
