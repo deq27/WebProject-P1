@@ -26,6 +26,7 @@ a{ text-decoration: none;}
 .menu>li:hover .submenu:hover{
     background-color: rgba(193, 240, 160, 0.59);
 }
+
 /* 메뉴 수정단 */
 
 nav{
@@ -34,7 +35,7 @@ nav{
     position: fixed; /*메뉴바 상단고정*/
     background-color: rgba(160, 229, 240, 0.5);
 }
-nav>h1{
+nav>#logo{
     float: left;
     width: 20%;
     line-height: 100px;
